@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  /* Original Theme Colors */
+  --color-numerano-navy: #0a192f;
+  --color-numerano-blue: #2563eb;
+  --color-numerano-white: #f8fafc;
+
+  /* Hero Section Preservation (Dark Theme) */
+  --color-numerano-dark: #050511;
+  --color-numerano-neon: #00f2ff;
+  --color-numerano-accent: #2d4eff;
+}
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-slate-900 font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-xl;
+  }
+}
