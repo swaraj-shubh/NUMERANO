@@ -30,6 +30,7 @@ export default function Navbar() {
     const navLinks = [
         { name: 'Home', id: 'home' },
         { name: 'Activities', id: 'activities' },
+        { name: 'BrainBuff', id: 'BrainBuff' },
         { name: 'Faculty', id: 'faculty' },
         { name: 'Members', id: 'members' },
         { name: 'Feedback', id: 'feedback' },
