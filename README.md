@@ -1,18 +1,19 @@
-# NUMERANO Feedback Application
+# React + Vite
 
-A full-stack feedback application built with React (Vite), Node.js, Express, and MongoDB.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features
+Currently, two official plugins are available:
 
--   **Frontend**: React, TypeScript, Tailwind CSS, Framer Motion (for smooth animations).
--   **Backend**: Node.js, Express.js, MongoDB (Mongoose).
--   **Validation**: Frontend and Backend validation to ensure data integrity.
--   **Dockerized**: Fully containerized setup for easy deployment.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Prerequisites
+## React Compiler
 
--   [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/) installed on your machine.
--   OR [Node.js](https://nodejs.org/) (v14+) and [MongoDB](https://www.mongodb.com/) for local setup.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
 ## Getting Started
 
@@ -81,7 +82,3 @@ npm run dev
 ├── docker-compose.yml      # Docker orchestration
 └── Dockerfile              # Frontend Dockerfile
 ```
-
-## Contributors
-
--   Kushagra Singh
