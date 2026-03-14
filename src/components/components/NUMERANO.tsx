@@ -67,7 +67,7 @@ const ImageTypewriter = ({
       {text.split("").map((char, i) => (
         <div
           key={i}
-          className={`relative transition-all duration-500 ease-out ${i === 0 ? '' : '-ml-[1.9rem] md:-ml-[4.8rem]'}`}
+          className={`relative transition-all duration-500 ease-out ${i === 0 ? '' : 'letter-spacing'}`}
           style={{
             opacity: i < index ? 1 : 0,
             transform: i < index 
@@ -112,6 +112,14 @@ const ImageTypewriter = ({
       ))}
       
       <style>{`
+        .letter-spacing {
+          margin-left: -1.7rem;
+        }
+        @media (min-width: 768px) {
+          .letter-spacing {
+            margin-left: -4.8rem;
+          }
+        }
         @keyframes ripple {
           0% {
             transform: scale(0.8);
@@ -126,6 +134,7 @@ const ImageTypewriter = ({
     </div>
   );
 };
+
 
 export default function NUMERANO() {
   const sigmaRef = useRef<HTMLImageElement>(null);
@@ -149,7 +158,7 @@ export default function NUMERANO() {
   }, []);
 
   return (
-    <div className="relative mb-16 flex justify-center">
+    <div className="relative mb-16 flex justify-center pointer-events-none">
       <div className="relative px-14 py-12">
 
         <div className="absolute left-1/2 -top-8 md:-top-3 w-10 md:w-14 -translate-x-1/2 z-10">
@@ -175,7 +184,7 @@ export default function NUMERANO() {
             transition-opacity duration-2000 ease-in-out"
         />
 
-        <div className="relative z-20 flex justify-center py-8 md:py-16">
+        <div className="absolute z-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center pointer-events-auto">
           <ImageTypewriter text="NUMERANO" />
         </div>
 
