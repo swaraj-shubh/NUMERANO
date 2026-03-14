@@ -184,7 +184,7 @@ export default function NUMERANO() {
             transition-opacity duration-2000 ease-in-out"
         />
 
-        <div className="absolute z-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center pointer-events-auto">
+        <div className="relative z-20 flex justify-center py-8 md:py-16 pointer-events-auto">
           <ImageTypewriter text="NUMERANO" />
         </div>
 

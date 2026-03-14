@@ -8,6 +8,7 @@ import Members from './pages/Members';
 import Teams from './pages/Teams';
 import Feedback from './pages/Feedback';
 import BrainBuffPage from './pages/BrainBuffPage';
+import SiteBackground from './components/SiteBackground';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
 function App() {
@@ -19,32 +20,36 @@ function App() {
   });
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50 overflow-x-hidden">
-      {/* Scroll Progress Bar */}
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-numerano-accent origin-left z-50"
-        style={{ scaleX }}
-      />
+    <div className="relative min-h-screen overflow-x-hidden">
+      <SiteBackground />
 
-      <Navbar />
+      <div className="relative z-10 flex flex-col min-h-screen">
+        {/* Scroll Progress Bar */}
+        <motion.div
+          className="fixed top-0 left-0 right-0 h-1 bg-numerano-accent origin-left z-50"
+          style={{ scaleX }}
+        />
 
-      <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={
-            <>
-              <section id="home"><Home /></section>
-              <section id="teams"><Teams /></section>
-              <section id="activities"><Activities /></section>
-              <section id="faculty"><Faculty /></section>
-              <section id="members"><Members /></section>
-              <section id="feedback"><Feedback /></section>
-            </>
-          } />
-          <Route path="/brainbuff" element={<BrainBuffPage />} />
-        </Routes>
-      </main>
+        <Navbar />
 
-      <Footer />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={
+              <>
+                <section id="home"><Home /></section>
+                <section id="teams"><Teams /></section>
+                <section id="activities"><Activities /></section>
+                <section id="faculty"><Faculty /></section>
+                <section id="members"><Members /></section>
+                <section id="feedback"><Feedback /></section>
+              </>
+            } />
+            <Route path="/brainbuff" element={<BrainBuffPage />} />
+          </Routes>
+        </main>
+
+        <Footer />
+      </div>
     </div>
   );
 }
