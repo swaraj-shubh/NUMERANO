@@ -21,7 +21,7 @@ export default function HeroSection() {
   );
 
   return (
-    <section className="relative h-screen w-full overflow-hidden flex flex-col justify-center items-center">
+    <section className="relative h-screen w-full overflow-hidden flex flex-col justify-center items-center pointer-events-none">
 
       <div className="relative z-30 h-full flex flex-col items-center justify-center text-center px-4 pointer-events-none">
         <motion.div

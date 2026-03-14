@@ -23,32 +23,36 @@ function App() {
     <div className="relative min-h-screen overflow-x-hidden">
       <SiteBackground />
 
-      <div className="relative z-10 flex flex-col min-h-screen">
+      <div className="relative z-10 flex flex-col min-h-screen pointer-events-none">
         {/* Scroll Progress Bar */}
         <motion.div
           className="fixed top-0 left-0 right-0 h-1 bg-numerano-accent origin-left z-50"
           style={{ scaleX }}
         />
 
-        <Navbar />
+        <div className="pointer-events-auto">
+          <Navbar />
+        </div>
 
-        <main className="flex-grow">
+        <main className="flex-grow pointer-events-none">
           <Routes>
             <Route path="/" element={
               <>
-                <section id="home"><Home /></section>
-                <section id="teams"><Teams /></section>
-                <section id="activities"><Activities /></section>
-                <section id="faculty"><Faculty /></section>
-                <section id="members"><Members /></section>
-                <section id="feedback"><Feedback /></section>
+                <section id="home" className="pointer-events-none"><Home /></section>
+                <section id="teams" className="pointer-events-auto"><Teams /></section>
+                <section id="activities" className="pointer-events-auto"><Activities /></section>
+                <section id="faculty" className="pointer-events-auto"><Faculty /></section>
+                <section id="members" className="pointer-events-auto"><Members /></section>
+                <section id="feedback" className="pointer-events-auto"><Feedback /></section>
               </>
             } />
-            <Route path="/brainbuff" element={<BrainBuffPage />} />
+            <Route path="/brainbuff" element={<div className="pointer-events-auto"><BrainBuffPage /></div>} />
           </Routes>
         </main>
 
-        <Footer />
+        <div className="pointer-events-auto">
+          <Footer />
+        </div>
       </div>
     </div>
   );
